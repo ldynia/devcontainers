@@ -1,27 +1,43 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"name": "Python 3",
+	"name": "Python 3.11",
 	"image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "hostRequirements": {
+    "cpus": 4
+  },
+  "portsAttributes": {
+    "5000": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
+    }
+  },
   // Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/black:1": {},
-		"ghcr.io/eitsupi/devcontainer-features/jq-likes:0": {},
 		"ghcr.io/devcontainers-contrib/features/pylint:1": {},
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-		"ghcr.io/devcontainers-contrib/features/yamllint:1": {},
 		"ghcr.io/guiyomh/features/vim:0": {}
 	},
-  "extensions": [
-    "DavidAnson.vscode-markdownlint",
-    "ms-azuretools.vscode-docker",
-    "ms-python.python",
-    "ms-python.vscode-pylance",
-    "redhat.vscode-yaml",
-    "ZainChen.json"
-  ]
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "DavidAnson.vscode-markdownlint",
+        "ms-azuretools.vscode-docker",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "redhat.vscode-yaml",
+        "ZainChen.json"
+      ]
+    }
+  },
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [5000]
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install --user -r requirements.txt",
