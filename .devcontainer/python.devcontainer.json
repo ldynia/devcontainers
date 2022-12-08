@@ -30,11 +30,9 @@
         "cschleiden.vscode-github-actions",
         "DavidAnson.vscode-markdownlint",
         "GitHub.vscode-pull-request-github",
-        "ms-azuretools.vscode-docker",
         "ms-python.python",
         "ms-python.vscode-pylance",
-        "redhat.vscode-yaml",
-        "ZainChen.json"
+        "redhat.vscode-yaml"
       ]
     }
   },
